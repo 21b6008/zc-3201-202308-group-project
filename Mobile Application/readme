@@ -1,0 +1,29 @@
+Installing Unity:
+1.	Install Unity Hub from a browser.
+2.	After installing, launch Unity Hub and choose Unity version 2021.3.8f1 to be installed.
+3.	After being directed to “Add modules to your install”, tick Android Build Support.
+4.	Complete installation of Unity 2021.3.8f1.
+
+Pulling Unity project from GitHub:
+1.	In “zx-3201-202208-group-c-assignment2” repository, click Mobile Application file.
+2.	Pull “Ned Controller” project from the Mobile Application file in GitHub to your GitHub desktop.
+3.	Copy project file from GitHub files to your own local disk.
+
+Opening project in Unity:
+1.	Run Unity 2021.3.8f1.
+2.	In “Projects”, click “Open” and choose “Add project from disk”.
+3.	Choose the copied “Ned Controller” project from your local disk to open project in Unity.
+
+Setting up Unity settings suitable for Mobile Application build:
+1.	Open “Ned Controller” project in Unity.
+2.	Go to File and click “Build Settings”.
+3.	Under “Scenes In Build”, tick “Scenes/SampleScene” for the built scene to be viewed in the later built mobile application.
+4.	Under “Platform”, click Android.
+5.	Click “Build” to build the mobile application apk into your disk under preferred name.
+
+Running built Unity Android Mobile Application apk on Android Mobile Phone:
+1.	Connect your Android Mobile Phone to your pc with the phone cable.
+2.	Copy the built mobile application apk saved from your disk to your Android Mobile Phone under “Downloads” file.
+3.	After transferring completed, click “Downloads” files on your phone and install the Unity Mobile apk.
+4.	After installation completed, find the app on your phone and you can now control the Ned robot arm through your phone.
+5.  To connect to Server, Use the input field for IP Address and Port number according to what the Server is listening to.
