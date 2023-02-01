@@ -100,6 +100,14 @@ This script's properties can be accessed through the `niryo_one` game object. In
 
 Next, its `Joint Speed`, there are a total of eight elements, however we will be only using six of them, corresponding to the six joints. From `Element 1` through `Element 6`, the values as of testing are: 52, 40, 50, 62.8, 62.8, 62.8.
 
+## Robot
+Before starting the server, we need to first set up the robot correctly. Make sure to:
+
+1. Attach a gripper. For our testing, we were using the Adaptive Grippers.
+2. Install the camera module.
+3. Attach the platform so that the camera can calibrate.
+4. 
+
 ## Server
 To start the server, you need to run two things:
 1. server.py
