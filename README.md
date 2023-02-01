@@ -1,5 +1,12 @@
 # **Web and Mobile Apps for Remote Control of a 6-DoF Robotic Arm**
 
+
+**Authors:** 
+<br>
+20B2076 Nurfarahiyah Amirah binti Mohd Yaakub <br>
+20B2125 Muhammad Luqman bin Mohd Jaffari <br>
+20B6002 Firdaus bin Erzam 
+
 ## **Description**:
 The School of Digital Science has acquired a Niryo NED 6 DOF robotic arm. The aim of this project is to develop a system that can control the robotic arm, there are three main parts to this project:
 <br>
@@ -9,9 +16,15 @@ The School of Digital Science has acquired a Niryo NED 6 DOF robotic arm. The ai
 
 <p style="text-align: center;"><img src="NiryoNed250x250.jpg"/></p>
 
+
 ## **Setup Instructions**
+Before doing anything, we need to clone this repository to our local machine. Just click the green button above and choose your preferred method of cloning.
+
+There are five main sections to the setup:
 - Web
 - Mobile
+- Digital Twin
+- Robot
 - Server
 
 ## Web
@@ -92,40 +105,24 @@ To start the server, you need to run two things:
 1. server.py
 2. A python web server
 
-You first need to install several things before running **server.py**.
 ### Setting up your environment
-Firstly, set up a virtual environment on the main directory. You can install **miniconda** from https://docs.conda.io/en/main/miniconda.html to set up the virtual environment.
+Before running **server.py** we need to set up a virtual environment to store the packages needed in the server.py file. You can install **miniconda** from https://docs.conda.io/en/main/miniconda.html to set up the virtual environment.
 
-Once installed, search for **Anaconda Prompt** and open it. In the terminal that opens, type:
+Once installed, search for **Anaconda Prompt** and open it. A terminal will open. Now we will create an environment using the environment file (pyniryo.yml) included in this repository. To do it, type and run:
 ```
-conda create -n pyniryo_env python=3
+conda env create -f pyniryo.yml
 ```
-This creates a virtual environment named 'pyniryo_env' and automatically installs the newest version of Python 3. To activate the new environment:
+This creates a new virtual environment named "pyniryo_env" and installs the packages specified in the environment file. To activate the new environment:
 ```
 conda activate pyniryo_env
 ```
+Now we can use this environment to run the file. 
 
-### Installing required libraries
-**PyNiryo**
+### The packages
+The most important package in this newly created environment is the PyNiryo library. This library is used to communicate and control the Ned robot. You can get the full documentation of PyNiryo from here https://docs.niryo.com/dev/pyniryo/v1.1.2/en/index.html.
 
-Once the environment is created, we need to install PyNiryo. PyNiryo is a package to control the robot using the Python language.
+There are other packages used for the server-client communication:
 
-Go to the newly created environment in the Anaconda Prompt, and use the following commands:
-```
-pip install numpy
-pip install pyniryo
-```
-You can now begin controlling the robot with Python. You can get the full documentation of PyNiryo from here https://docs.niryo.com/dev/pyniryo/v1.1.2/en/index.html.
-
-**Other libraries**
-
-You will also need other libraries to run the code flawlessly. Just run the following commands:
-```
-pip install socket
-pip install websockets
-pip install asyncio
-pip install opencv-python
-```
 **socket**: This was originally used for client-server communication, but now only used to automatically get the machine's IP address.
 <br>
 **websockets**: Used for client-server communication.
@@ -135,15 +132,16 @@ pip install opencv-python
 **opencv-python (cv2)**: Used to encode robot stream image to jpg.
 
 ### Starting the server
-Once set up, you are now ready to start the server. Either run the server.py file from your IDE or start up a terminal, go to the server folder and run the following command:
+Once set up, you are now ready to start the server. Just run the server.py file in the /Server directory. If you're using an IDE/text editor, make sure to select the correct interpreter (pyniryo_env). If you're using a terminal to run the file, just use the previous conda terminal and navigate to /Server and run this command:
 ```
 python server.py
 ```
-Be sure to use the correct environment or python interpreter in your IDE/Text Editor.
 
 ### Python Web Server
-For web applications, you also need to set up the web server to host the website. The files needed for the website is provided by the web developer, you just need to place the files in a folder. To run the web server, open a terminal and redirect to the server directory, then run:
+For web applications, you also need to set up the web server to host the website. The files needed for the website will be available after you finish building the project in the **Web** instructions section. You just need to place the files in a folder. To run the web server, open a terminal and navigate to created folder, then run:
 ```
 python -m http.server
 ```
+For example: Create a new folder named "Website" in the desktop. Place the files in the folder and open a terminal. Navigate to the /Website directory and run the command.
+
 Congrats! If you follow all the instructions correctly, the server should now be running and ready to serve both web and mobile applications.
