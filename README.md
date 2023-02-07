@@ -103,10 +103,21 @@ Next, its `Joint Speed`, there are a total of eight elements, however we will be
 ## Robot
 Before starting the server, we need to first set up the robot correctly. Make sure to:
 
-1. Attach a gripper. For our testing, we were using the Adaptive Grippers.
-2. Install the camera module.
-3. Attach the platform so that the camera can calibrate.
-4. 
+1. Place the robot on a flat surface and make sure to have enough space for it to operate without hitting something or someone.
+2. Connect the power plug.
+3. Attach a gripper. For our testing, we were using the Adaptive Grippers.
+4. Install the camera module and connect to the USB port on the robot.
+5. Attach the platform so that the camera can calibrate.
+
+Now you can turn on the robot and wait for the light indicator to change color from red.
+
+### Connecting to a network
+Once the color changes to blue, the robot is in Hotspot mode. This means your device can connect to the robot via Wi-Fi using the robot's own network. You can also connect using an ethernet cable. Either way, 
+
+The easiest way to connect via Wi-Fi is to install the Niryo Studio application:
+
+1. 
+
 
 ## Server
 To start the server, you need to run two things:
