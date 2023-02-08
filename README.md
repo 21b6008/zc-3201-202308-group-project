@@ -108,16 +108,9 @@ Before starting the server, we need to first set up the robot correctly. Make su
 3. Attach a gripper. For our testing, we were using the Adaptive Grippers.
 4. Install the camera module and connect to the USB port on the robot.
 5. Attach the platform so that the camera can calibrate.
+6. Use an ethernet cable to connect the robot to the network.
 
-Now you can turn on the robot and wait for the light indicator to change color from red.
-
-### Connecting to a network
-Once the color changes to blue, the robot is in Hotspot mode. This means your device can connect to the robot via Wi-Fi using the robot's own network. You can also connect using an ethernet cable. Either way, 
-
-The easiest way to connect via Wi-Fi is to install the Niryo Studio application:
-
-1. 
-
+Now you can turn on the robot and wait for the light indicator to change color from red. Once the light turns blue, the robot is ready for a connection. 
 
 ## Server
 To start the server, you need to run two things:
