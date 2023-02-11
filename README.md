@@ -54,7 +54,7 @@ Now that we have built the website to run it we have to place all the files insi
 5.	Complete installation of Unity 2021.3.8f1.
 
 ### Pulling Unity project from GitHub:
-1.	In “zx-3201-202208-group-c-assignment2” repository, click Mobile Application file.
+1.	In “zx-3201-202208-group-c-project” repository, click Mobile Application file.
 2.	Pull “Ned Controller” project from the Mobile Application file in GitHub to your GitHub desktop.
 3.	Copy project file from GitHub files to your own local disk.
 
