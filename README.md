@@ -73,6 +73,7 @@ Now that we have built the website to run it we have to place all the files insi
 2.	Go to File and click “Build Settings”.
 3.	Under “Scenes In Build”, tick “Scenes/SampleScene” for the built scene to be viewed in the later built mobile application.
 4.	Under “Platform”, click Android.
+5.  Click "Switch Platform" to switch to the Android build.
 5.	Click “Build” to build the mobile application apk into your disk under preferred name.
 
 ### Running built Unity Android Mobile Application apk on Android Mobile Phone:
