@@ -31,6 +31,11 @@ public class RobotController : MonoBehaviour
         SocketController.SendCommand(sliderBehaviour.jointVals);
         learningMode = false;
     }
+    public void moveJointsxyz()
+    {
+        SocketController.SendCommand("xyz," + sliderBehaviour.jointValsxyz);
+        learningMode = false;
+    }
     public void returnHome()
     {
         SocketController.SendCommand("HOME");

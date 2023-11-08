@@ -13,7 +13,6 @@ public class SocketController : MonoBehaviour
     // These bool variables are used to control socket connect and disconnect
     static bool socketReady = false, startSocket = false;
     static WebSocket websocket;
-    static WebSocket websocket2;
 
     // height and width are the values used to create our Texture2D for image streaming,
     // the values are as such as this is the size of the image sent by server and Texture2D
@@ -31,12 +30,12 @@ public class SocketController : MonoBehaviour
     // Host IP Address and Port number on the interface
     public InputField Host;
     public InputField Port;
-    public InputField Port2;
 
     // RobotControl Script to move digital twin when receiving joint values from server
     public RobotControl RobotControl;
     // RobotController Script to turn learning mode off when disconnecting
     public RobotController RobotController;
+    public SliderBehaviour sliderbehaviour;
 
     // Update is called once per frame
     async void Update()
@@ -47,15 +46,11 @@ public class SocketController : MonoBehaviour
         {
             Result.text = "Disconnect from Socket";
             // socketUrl takes the text value of Host and Port InputFields to create the websocket url
-            //String socketUrl = "ws://" + Host.text + ":" + Port.text;
-            String socketUrl2 = "ws://" + Host.text + ":" + Port2.text;
-            //Debug.Log(socketUrl);
-            Debug.Log(socketUrl2);
+            String socketUrl = "ws://" + Host.text + ":" + Port.text;
             // Gets the new websocket by calling StartClient()
-            //websocket = StartClient(socketUrl);
-            websocket2 = StartClient(socketUrl2);
+            websocket = StartClient(socketUrl);
             // declare what code to run on the received message from server
-            websocket2.OnMessage += (bytes) =>
+            websocket.OnMessage += (bytes) =>
             {
                 // checks that the length of the message is less than 35, 
                 // this is due to the only other message received will be
@@ -63,7 +58,7 @@ public class SocketController : MonoBehaviour
                 // to distinguish if it is joint values or image byte array
                 if (System.Text.Encoding.UTF8.GetString(bytes).Length < 35)
                 {
-                     moveJointFollowRobot(System.Text.Encoding.UTF8.GetString(bytes));
+                    moveJointFollowRobot(System.Text.Encoding.UTF8.GetString(bytes));
                 }
                 else
                 {
@@ -74,7 +69,6 @@ public class SocketController : MonoBehaviour
             };
             // Connects the created websocket to server
             await websocket.Connect();
-            await websocket2.Connect();
         }
         // else check if startsocket is false meaning we want to close it
         // and that socket is open, so that there is a socket to close
@@ -117,7 +111,10 @@ public class SocketController : MonoBehaviour
         // splits the message into an array
         String[] jointVals = message.Split(" ");
         // calls the method that moves the digital twin with the split message as parameter
+        
         RobotControl.UpdateJointValuesFromRobot(jointVals);
+        sliderbehaviour.moveslider(jointVals);
+
     }
 
     // inverts startSocket value
